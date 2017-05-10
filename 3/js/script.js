@@ -58,7 +58,10 @@ function displayPuppy(id) {
     //     <div class='name'>
     //     <img class='clickable'>
     //     <div id='{id}'>
-    var toDisplay = "<div class='name'>" + puppy.name + "</div><img class='clickable' src='" + puppy.pic + "'/><div id='" + id.toString() + "'>" + "Clicks: " + puppy.clicks.toString() + "</div>";
+    var toDisplay = "<div><p class='name'>" + puppy.name + "</p></div>" +
+        "<img class='clickable' src='" + puppy.pic + "'/><div id='" +
+        id.toString() + "'><p>" + "Clicks: " + puppy.clicks.toString() +
+        "</p></div>";
     $("#display").append(toDisplay);
     // When the img is clicked, it triggers the anonymous function and passes
         // the clickable object in
