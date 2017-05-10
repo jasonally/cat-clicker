@@ -17,7 +17,7 @@ The second iteration must satisfy these requirements:
 - The number of clicks should increment when each puppy picture is clicked.
 
 ### Iteration 3
-The third iteration, referred to as Cat Clicker Premium must satisfy these requirements:
+The third iteration must satisfy these requirements:
 - The application should display
     - a list of at least 5 puppies, listed by name
     - an area to display the selected puppy
@@ -27,6 +27,9 @@ The third iteration, referred to as Cat Clicker Premium must satisfy these requi
     - text showing the number of clicks
 - When a puppy's name is clicked in the list, the puppy display area should update to show the data for the selected puppy.
 - The number of clicks in the puppy area should be unique to each puppy, and should increment when the puppy's picture is clicked.
+
+### Iteration 4
+The fourth iteration, which I'm referring to as Cat Clicker Premium, is identical to the third iteration except that it should use the Model-View-Octopus structure. Code pertaining to puppy data should be stored in the model and code pertaining to the user-facing view of the app should be stored in the view. A third component of code, the octopus, is responsible for manipulating data in the model based on user interactions which are captured from the view.
 
 ### Picture credits
 The puppy pictures in my app iterations are from https://pixabay.com/, which contains pictures and photos anyone can use royalty free. Pictures and videos on Pixabay are released free of copyrights under Creative Commons CC0.
