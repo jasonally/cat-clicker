@@ -31,5 +31,19 @@ The third iteration must satisfy these requirements:
 ### Iteration 4
 The fourth iteration, which I'm referring to as Cat Clicker Premium, is identical to the third iteration except that it should use the Model-View-Octopus structure. Code pertaining to puppy data should be stored in the model and code pertaining to the user-facing view of the app should be stored in the view. A third component of code, the octopus, is responsible for manipulating data in the model based on user interactions which are captured from the view.
 
+### Iteration 5
+The fifth and final iteration, Cat Clicker Premium Pro, had to satisfy these additional visual requirements:
+- An admin button
+- An admin area with inputs for changing the cat's name, url, and number of clicks (hidden by default)
+
+The app had to satisfy these interaction requirements:
+- When a cat name is clicked in the list, the cat display area should update to show the data for the selected cat.
+- The number of clicks in the cat area should be unique to each cat, and should increment when the cat's picture is clicked.
+- When the admin button is clicked, the admin area should appear with the inputs filled in for the currently-selected cat.
+- When the cancel button in the admin area is pressed, the admin area disappears.
+- When the save button in the admin area is pressed, the currently-selected cat's values update with the values in the admin area, and the admin area disappears.
+
+Because this iteration still uses the MVO structure, it was much easier to implement these features in the model and the view. I spent most of my time making the octopus features work properly, which was the point of this exercise.
+
 ### Picture credits
 The puppy pictures in my app iterations are from https://pixabay.com/, which contains pictures and photos anyone can use royalty free. Pictures and videos on Pixabay are released free of copyrights under Creative Commons CC0.

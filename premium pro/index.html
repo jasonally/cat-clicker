@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Puppy Clicker</title>
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+    <script type='text/javascript' src='js/script.js'></script>
+</head>
+<body>
+    <div class='container'>
+        <div id='title'>
+            <h1>Puppy Clicker</h1>
+        </div>
+        <div>
+            <ul id='puppy-list'></ul>
+        </div>
+        <div id='puppy'>
+            <p id='puppy-name'></p>
+            <img id='puppy-img'>
+            <p id='puppy-count'></p>
+        </div>
+        <div>
+            <button id='admin-button' type='button'>Admin</button>
+        </div>
+        <br>
+        <div id='admin-box'>
+            <form>
+                Name: <input id='admin-name' type='text'><br>
+                Image URL: <input id='admin-image' type='text'><br>
+                Number of clicks: <input id='admin-clicks' type='text'><br>
+                <button id='admin-cancel' type='button'>Cancel</button>
+                <button id='admin-submit' type='button'>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
