@@ -11,15 +11,15 @@
         <h1>Puppy Clicker</h1>
     </div>
     <div>
-        <ul data-bind="foreach: catList">
-            <li data-bind="text: name, click: $parent.setCat"></li>
+        <ul data-bind="foreach: puppyList">
+            <li data-bind="text: name, click: $parent.setPuppy"></li>
         </ul>
     </div>
-    <div data-bind="with: currentCat">
+    <div data-bind="with: currentPuppy">
         <h2 data-bind="text: name"></h2>
         <h3 data-bind="text: level"></h3>
-        <!-- incrementCounter is defined in the ViewModel, not in currentCat. Therefore, you need to use $parent.incrementCounter for the incrementCounter function to work properly. -->
-        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter,
+        <!-- incrementCounter is defined in the ViewModel, not in currentPuppy. Therefore, you need to use $parent.incrementCounter for the incrementCounter function to work properly. -->
+        <img src="" alt="cute puppy" data-bind="click: $parent.incrementCounter,
             attr: {src: pic}">
         <br>
         <div>Clicks: <span data-bind="text: clickCount">&nbsp;</span></div>

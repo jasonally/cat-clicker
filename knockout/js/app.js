@@ -1,5 +1,5 @@
 function knockoutCode() {
-    var initialCats = [
+    var initialPuppies = [
         {
             "name": "Fido",
             "pic": "images/puppy-1.jpg",
@@ -32,10 +32,10 @@ function knockoutCode() {
         }
     ];
 
-    // Variable which creates different instances of cats. Kind of like a class in
+    // Variable which creates different instances of puppies. Kind of like a class in
     // Python, but JavaScript doesn't have classes. The JavaScript object type has
     // to do as a result.
-    var Cat = function(data) {
+    var Puppy = function(data) {
         this.name = ko.observable(data.name);
         this.pic = ko.observable(data.pic);
         this.clickCount = ko.observable(data.clickCount);
@@ -63,29 +63,30 @@ function knockoutCode() {
         // to the smaller binding context -- not to the global object.
         var self = this;
 
-        this.catList = ko.observableArray([]);
+        this.puppyList = ko.observableArray([]);
 
-        initialCats.forEach(function(catItem) {
-            // Using the self trick, self.catList will really map to
-            // this.catList from the ViewModel binding context.
-            self.catList.push(new Cat(catItem));
+        initialPuppies.forEach(function(puppyItem) {
+            // Using the self trick, self.puppyList will really map to
+            // this.puppyList from the ViewModel binding context.
+            self.puppyList.push(new Puppy(puppyItem));
         });
 
-        // By default, sets the currentCat to the first cat in the catList
+        // By default, sets the currentPuppy to the first puppy in the puppyList
         // observable array when the page first loads. As the user clicks on
-        // different cats, this.currentCat will change in value using
-        // this.setCat.
-        this.currentCat = ko.observable(this.catList()[0]);
+        // different puppies, this.currentPuppy will change in value using
+        // this.setPuppy.
+        this.currentPuppy = ko.observable(this.puppyList()[0]);
 
         // Check how the updating of incrementCounter works in the view. Because
-        // incrementCounter is located in the ViewModel, not currentCat, you
+        // incrementCounter is located in the ViewModel, not currentPuppy, you
         // need to use $parent.incrementCounter to use the function properly.
         this.incrementCounter = function() {
-            self.currentCat().clickCount(self.currentCat().clickCount() + 1);
+            self.currentPuppy().clickCount(self.currentPuppy().clickCount()
+                + 1);
         };
 
-        this.setCat = function(clickedCat) {
-            self.currentCat(clickedCat);
+        this.setPuppy = function(clickedPuppy) {
+            self.currentPuppy(clickedPuppy);
         };
     }
 
