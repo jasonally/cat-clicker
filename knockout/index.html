@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puppy Clicker</title>
+    <script src="js/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Puppy Clicker</h1>
+    </div>
+    <div>
+        <ul data-bind="foreach: catList">
+            <li data-bind="text: name, click: $parent.setCat"></li>
+        </ul>
+    </div>
+    <div data-bind="with: currentCat">
+        <h2 data-bind="text: name"></h2>
+        <h3 data-bind="text: level"></h3>
+        <!-- incrementCounter is defined in the ViewModel, not in currentCat. Therefore, you need to use $parent.incrementCounter for the incrementCounter function to work properly. -->
+        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter,
+            attr: {src: pic}">
+        <br>
+        <div>Clicks: <span data-bind="text: clickCount">&nbsp;</span></div>
+        <div>
+            <h3>Nicknames:</h3>
+            <ul data-bind="foreach: nicknames">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
