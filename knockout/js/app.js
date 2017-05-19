@@ -32,9 +32,9 @@ function knockoutCode() {
         }
     ];
 
-    // Variable which creates different instances of puppies. Kind of like a class in
-    // Python, but JavaScript doesn't have classes. The JavaScript object type has
-    // to do as a result.
+    // Variable which creates different instances of puppies. Kind of like a
+    // class in Python, but JavaScript doesn't have classes. The JavaScript
+    // object type has to do as a result.
     var Puppy = function(data) {
         this.name = ko.observable(data.name);
         this.pic = ko.observable(data.pic);
