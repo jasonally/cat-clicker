@@ -1,5 +1,5 @@
 function knockoutCode() {
-    var initialPuppies = [
+    var puppies = [
         {
             "name": "Fido",
             "pic": "images/puppy-1.jpg",
@@ -57,15 +57,18 @@ function knockoutCode() {
     var ViewModel = function() {
         // Setting self = this means self represents the global object from
         // ViewModel. You can then refer to self in other functions within the
-        // ViewModel to refer to the global object from ViewModel. If you tried
-        // to use 'this' within the other functions, you'd run into problems.
-        // This is because using 'this' within the other functions would refer
-        // to the smaller binding context -- not to the global object.
+        // ViewModel to refer to the global object. If you tried to use 'this'
+        // within the other functions, you'd run into problems. This is because
+        // using 'this' within the other functions would refer to the smaller
+        // binding context -- not to the global object.
         var self = this;
 
         this.puppyList = ko.observableArray([]);
 
-        initialPuppies.forEach(function(puppyItem) {
+        // Create an observable array which contains an instance of Puppy for
+        // each entry in puppies. We'll use the observable array to create the
+        // list of puppies users see in the DOM.
+        puppies.forEach(function(puppyItem) {
             // Using the self trick, self.puppyList will really map to
             // this.puppyList from the ViewModel binding context.
             self.puppyList.push(new Puppy(puppyItem));
@@ -75,6 +78,8 @@ function knockoutCode() {
         // observable array when the page first loads. As the user clicks on
         // different puppies, this.currentPuppy will change in value using
         // this.setPuppy.
+        // As currently structured, the DOM needs a default puppy selected or
+        // else the web app won't load properly.
         this.currentPuppy = ko.observable(this.puppyList()[0]);
 
         // Check how the updating of incrementCounter works in the view. Because

@@ -1,7 +1,8 @@
+/* ========== Model ========== */
 // Per the MVO approach, the model contains the data used in our web app.
 var model = {
     // Contains the appropriate puppy from the puppies array.
-    currentPuppy: null,
+    currentPuppy: "",
 
     // Array containing the puppies data.
     puppies: [
@@ -37,18 +38,12 @@ var model = {
     adminShow: true
 };
 
+/* ========== Octopus ========== */
 // The octopus interfaces between the view and the model. The view and the
 // model never directly communicate.
 var octopus = {
     init: function() {
-        // By default, set current puppy to the first one in the list.
-        //
-        // This is kind of like an alias. That way when you click the picture
-        // and it increments the count, you're directly updating the click
-        // value in the puppies array.
-        model.currentPuppy = model.puppies[0];
-
-        // Octopus should initialize the view components.
+        // Octopus initializes the view components.
         puppyListView.init();
         puppyView.init();
         adminView.init();
@@ -106,29 +101,8 @@ var octopus = {
     }
 };
 
+/* ========== View ========== */
 // The view controls the display -- what users see in the web app.
-var puppyView = {
-    init: function() {
-        this.puppyElem = $("#puppy");
-        this.puppyNameElem = $("#puppy-name");
-        this.puppyImageElem = $("#puppy-img");
-        this.countElem = $("#puppy-count");
-
-        this.puppyImageElem.click(function() {
-            octopus.incrementCounter();
-        });
-
-        this.render();
-    },
-
-    render: function() {
-        var currentPuppy = octopus.getCurrentPuppy();
-        this.puppyNameElem.html(currentPuppy.name);
-        this.puppyImageElem.attr({"src": currentPuppy.pic, "alt": "puppy pic"});
-        this.countElem.html("Clicks: " + currentPuppy.clicks);
-    }
-};
-
 var puppyListView = {
     init: function() {
         this.puppyListElem = $("#puppy-list");
@@ -155,6 +129,35 @@ var puppyListView = {
                 octopus.setCurrentPuppy(puppies[id]);
                 puppyView.render();
         });
+    }
+};
+
+var puppyView = {
+    init: function() {
+        this.puppyElem = $("#puppy");
+        this.puppyNameElem = $("#puppy-name");
+        this.puppyImageElem = $("#puppy-img");
+        this.countElem = $("#puppy-count");
+
+        this.puppyImageElem.click(function() {
+            octopus.incrementCounter();
+        });
+
+        this.render();
+    },
+
+    render: function() {
+        var currentPuppy = octopus.getCurrentPuppy();
+        this.puppyNameElem.html(currentPuppy.name);
+        // Only set src and alt attributes when the user clicks on a puppy name.
+        if (currentPuppy.pic) {
+            this.puppyImageElem.attr({"src": currentPuppy.pic,
+                "alt": "puppy pic"});
+        }
+        // Only display number of clicks when the user clicks on a puppy name.
+        if (currentPuppy.clicks >= 0) {
+            this.countElem.html("Clicks: " + currentPuppy.clicks);
+        }
     }
 };
 
