@@ -1,5 +1,5 @@
 # Puppy Clicker
-This repo contains the iterations of the Cat Clicker app which students in Udacity's Full Stack Nanodegree Program build during The Frontend: JavaScript and AJAX section. As of April 2017, these app iterations are specifically part of the Changing Expectations portion of the section. I'll describe each iteration below.
+This repo contains the iterations of the Cat Clicker app which students in Udacity's Full Stack Nanodegree Program build during The Frontend: JavaScript and AJAX section. As of April 2017, these app iterations are specifically part of the [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989) course.
 
 Because I'm a dog person, my app is Puppy Clicker instead of Cat Clicker.
 
@@ -46,7 +46,7 @@ The app had to satisfy these interaction requirements:
 Because this iteration still uses the MVO structure, it was much easier to implement these features in the model and the view. I spent most of my time making the octopus features work properly, which was the point of this exercise.
 
 ### Iteration 6
-The sixth iteration refactors the app and uses a Knockout JS organizational framework. The JavaScript and HTML code is much cleaner since there's no need to explicitly create octopus functions to link the view and the model. Knockout's declarative bindings allow the developer to put the viewmodel's logic directly in the HTML, cutting down on the repetive logic of iterations 4 and 5.
+The sixth iteration refactors the app and uses a [knockout.js](http://knockoutjs.com/) organizational framework. The JavaScript and HTML code is much cleaner since there's no need to explicitly create octopus functions to link the view and the model. Knockout's declarative bindings allow the developer to put the viewmodel's logic directly in the HTML, cutting down on the repetive logic of iterations 4 and 5.
 
 ### Picture credits
 The puppy pictures in my app iterations are from https://pixabay.com/, which contains pictures and photos anyone can use royalty free. Pictures and videos on Pixabay are released free of copyrights under Creative Commons CC0.
